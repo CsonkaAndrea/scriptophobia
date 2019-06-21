@@ -1,0 +1,28 @@
+#selectDoboz {
+    position: fixed;
+    width: 200px;
+    height: 40px;
+    background-color: darkorange;
+    border-radius: 5px;
+    left: 200px;
+    top: 100px;
+    font-family: Verdana;
+    font-size: 20px;
+    color: white
+}
+
+body {
+    height: 100%;
+}
+
+html {
+    height: 100%;
+}
+
+.background {
+    background-image: url("https://www.kakkupaperi.fi/347/football-cake-topper-football-field-edible-cake-topper.jpg");
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}

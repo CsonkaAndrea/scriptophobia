@@ -73,11 +73,33 @@ document.querySelector('#foreignPlayers').innerHTML = foreignPlayers();
     }
 }*/
 
-function calcAge(birthdate) {
+function calcAge(szulido) {
     var age = -99;
     var dtToday = new Date();
-    var dtBirthDate = new Date(BirthDate);
+    var dtBirthDate = new Date(szulido);
     age = dtToday.getFullYear() - dtBirthDate.getFullYear();
 
     return age;
 }
+
+function minimumAge() {
+    var min = calcAge(data[0].szulido);
+    for (var i = 0; i < data.length; i++) {
+        if (calcAge(data[i].szulido) < min) {
+            min = calcAge(data[i].szulido);
+        }
+    }
+    return min;
+}
+document.querySelector('#youngest').innerHTML = minimumAge();
+
+function maximumAge() {
+    var max = calcAge(data[0].szulido);
+    for (var i = 0; i < data.length; i++) {
+        if (calcAge(data[i].szulido) > max) {
+            max = calcAge(data[i].szulido);
+        }
+    }
+    return max;
+}
+console.log(maximumAge());

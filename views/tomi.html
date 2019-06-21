@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible"
+          content="ie=edge">
+    <title>Tomi</title>
+</head>
+
+<body>
+
+    <ul id="clubs"></ul>
+
+
+    <select name="playersOfClubs"
+            id="playersOfClubs"
+            onchange="tellTheClubValue()">
+        <option value="noValue">Válassz csapatot</option>
+        <option value="Vasas FC">Vasas FC</option>
+        <option value="Ferencvárosi TC">Ferencvárosi TC</option>
+        <option value="Balmazújváros FC">Balmazújvárosi FC</option>
+        <option value="Újpest FC">Újpest FC</option>
+        <option value="Diósgyőri VTK">Diósgyőri VTK</option>
+        <option value="Puskás Akadémia FC">Puskás Akadémia FC</option>
+        <option value="Paksi FC">Paksi FC</option>
+        <option value="Szombathelyi Haladás">Szombathelyi Haladás</option>
+        <option value="Budapest Honvéd FC">Budapest Honvéd FC</option>
+        <option value="Mezőkövesd Zsóry FC">Mezőkövesd Zsóry FC</option>
+        <option value="Videoton FC">Videoton FC</option>
+        <option value="Debreceni VSC">Debreceni VSC</option>
+    </select>
+
+    <!-- <button id="playersOfClubsBtn">Listázd a játékosokat!</button> -->
+
+    <ul id="playersList"></ul>
+
+    <p>Magyar játékosok száma</p>
+    <p id="hunPlayers"></p>
+
+    <p>Külföldi játékosok száma</p>
+    <p id="foreignPlayers"></p>
+
+    <script src="/scripts/nb1.js"></script>
+    <script src="/scripts/queries.js"></script>
+</body>
+
+</html>

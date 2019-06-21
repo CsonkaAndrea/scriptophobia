@@ -6,6 +6,19 @@ function CalculateAge(szulido) {
     return age;
 }
 
+/*function OrderBy() {
+    for (var i = 0; i < PlayersByClubs.length - 1; i++) {
+        for (var j = 0; j < PlayersByClubs[i].players.length-1; j++) {
+            for (var k = 0; k < PlayersByClubs[i].players.length; k++) {
+                if(PlayersByClubs[i].players[j].vezeteknev>PlayersByClubs[i].players[k].vezeteknev){
+                    var temp=[PlayersByClubs[i].players[j].vezeteknev,PlayersByClubs[i].players[k].vezeteknev]
+                    PlayersByClubs[i].players[j].vezeteknev=temp[1];
+                    PlayersByClubs[i].players[k].vezeteknev=temp[0];
+                }
+            }
+        }
+    }
+}*/
 
 function PlayersByClubs() {
     var clubs = [];
@@ -37,10 +50,10 @@ function PlayersByClubs() {
 function DrowGroupBy() {
     document.querySelector('#csoportositasKlubbonkent').innerHTML = '';
     for (var i = 0; i < PlayersByClubs().length; i++) {
-        document.querySelector('#csoportositasKlubbonkent').innerHTML += "<li>" + 'Klub: ' + PlayersByClubs()[i].name +"</li>"+"<br>";
+        document.querySelector('#csoportositasKlubbonkent').innerHTML += "<li id='clubName'>" + 'Klub: ' + PlayersByClubs()[i].name + "</li>" + "<br>";
         for (var j = 0; j < PlayersByClubs()[i].players.length; j++) {
 
-            document.querySelector('#csoportositasKlubbonkent').innerHTML += "<li>"  + PlayersByClubs()[i].players[j].vezeteknev +' '+PlayersByClubs()[i].players[j].utonev+ "</li>";
+            document.querySelector('#csoportositasKlubbonkent').innerHTML += "<li>" + PlayersByClubs()[i].players[j].vezeteknev + ' ' + PlayersByClubs()[i].players[j].utonev + "</li>";
         }
         document.querySelector('#csoportositasKlubbonkent').innerHTML += "<br>";
     }
@@ -57,6 +70,9 @@ function PlayersWithName() {
         if (data[i].vezeteknev == playerName) {
             result.push(data[i]);
         }
+    }
+    if (playerName == '') {
+        alert('Adj meg egy nevet!');
     }
     return result;
 }
@@ -111,39 +127,3 @@ function AverageAge() {
     avg = (sum / count).toFixed(2);
     alert('Az átlag életkor: ' + avg + ' év');
 }
-
-
-
-/*function DrawSomething() {
-    document.querySelector("#jatekosFelsorolas").innerHTML='';
-    for (var i = 0; i < PlayersWithName().length; i++) {
-        document.querySelector("#jatekosFelsorolas").innerHTML += "<li>" + 'Neve: '+PlayersWithName()[i].vezeteknev + ' ' + PlayersWithName()[i].utonev + ', születési ideje: ' + PlayersWithName()[i].szulido + ', csapata:  ' + PlayersWithName()[i].klub + ', posztja: ' + PlayersWithName()[i].poszt + "</li>";
-
-    }
-}*/
-/*
-function PlayersByClub() {
-    var clubs = ClubsRepresented();
-    var player = 0;
-    var playersByClub = [];
-
-    for (var i = 0; i < clubs.length; i++) {
-        playersByClub.push({
-            name: clubs[i],
-            players: []
-        });
-    }
-
-    for (var i = 0; i < players.length; i++) {
-        player = players[i];
-        for (var j = 0; j < playersByClub.length; j++) {
-            if (playersByClub[j].name === player.club) {
-                playersByClub[j].players.push(player);
-                break;
-            }
-        }
-    }
-    return playersByClub;
-}
-
-*/

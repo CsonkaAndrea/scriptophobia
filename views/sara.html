@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>NBI</title>
+    <link rel="stylesheet" type="text/css" href="/scriptophobia/design/nb1.css">
+</head>
+
+<body>
+    <h1>NBI</h1>
+
+    <h3>Csoportosíts!</h3>
+    <div>Klubbonként mutasd a játékosokat! <button onclick="DrowGroupBy();">Csoportosíts!</button></div>
+    <ul id="csoportositasKlubbonkent"></ul>
+
+
+    <h3>Keress!</h3>
+    <div>
+        <label for="playerName">Írd be a játékos nevét, kiadom az adatait!</label>
+        <input type="text" name="playerName" id="playerName" placeholder="Böde">
+    </div>
+    <button type="button" onclick="DrawSomething();">Keress!</button>
+
+
+    <ol id="jatekosFelsorolas"></ol>
+    <p>
+        <button onclick="YoungestPlayer()">Írd ki a legfiatalabb játékos nevét és születési idejét!</button>
+    </p>
+    <p>
+
+        <button onclick="OldestPlayer()">Írd ki a legidősebb játékos nevét és születési idejét!</button>
+    </p>
+    <p>
+
+        <button onclick="AverageAge()">Add meg az átlag életkort!</button>
+    </p>
+
+
+    <script type="text/javascript" src="/scriptophobia/scripts/nb1.js"></script>
+    <script type="text/javascript" src="/scriptophobia/scripts/saraQueries_nb1.js"></script>
+    <script type="text/javascript" src="/scriptophobia/scripts/saraTestQueries_nb1.js"></script>
+</body>
+
+</html>

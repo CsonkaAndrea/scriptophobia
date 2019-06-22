@@ -59,7 +59,7 @@ span {
 }
 
 #belsokozeppalyas {
-    top: 270px;
+    top: 300px;
     left: 620px;
 }
 
@@ -69,23 +69,33 @@ span {
 }
 
 #baloldalikozeppalyas {
-    top: 200px;
-    left: 700px;
+    top: 130px;
+    left: 600px;
 }
 
 #tamadokozeppalyas {
-    top: 350px;
+    top: 370px;
     left: 700px;
 }
 
 #balszelso {
     top: 120px;
-    left: 800px;
+    left: 820px;
 }
 
 #jobbszelso {
-    top: 470px;
-    left: 800px;
+    top: 490px;
+    left: 820px;
+}
+
+#kozepcsatar {
+    top: 290px;
+    left: 850px;
+}
+
+#hatravontcsatar {
+    top: 200px;
+    left: 750px;
 }
 
 

@@ -219,6 +219,32 @@ function elsoJobbSzelso() {
     return elsoJobbSzelso;
 }
 
+//Megkeresi a kiválasztott csapat első középcsatárát:
+function elsoKozepCsatar() {
+    var elsoKozepCsatar = [];
+
+    for (var i = 0; i < kivalasztottCsapatJatekosai().length; i++) {
+        if (kivalasztottCsapatJatekosai()[i].poszt == "középcsatár") {
+            elsoKozepCsatar.push(kivalasztottCsapatJatekosai()[i]);
+            break;
+        }
+    }
+    return elsoKozepCsatar;
+}
+
+//Megkeresi a kiválasztott csapat első hátravont csatárát:
+function elsoHatravontCsatar() {
+    var elsoHatravontCsatar = [];
+
+    for (var i = 0; i < kivalasztottCsapatJatekosai().length; i++) {
+        if (kivalasztottCsapatJatekosai()[i].poszt == "hátravont csatár") {
+            elsoHatravontCsatar.push(kivalasztottCsapatJatekosai()[i]);
+            break;
+        }
+    }
+    return elsoHatravontCsatar;
+}
+
 //Kiírja a játékosokat onchange hatására
 function irdKiKekBuborekba() {
     document.querySelector("#kapus").innerHTML = "";
@@ -232,6 +258,8 @@ function irdKiKekBuborekba() {
     document.querySelector("#balszelso").innerHTML = "";
     document.querySelector("#jobbszelso").innerHTML = "";
     document.querySelector("#baloldalikozeppalyas").innerHTML = "";
+    document.querySelector("#kozepcsatar").innerHTML = "";
+    document.querySelector("#hatravontcsatar").innerHTML = "";
 
     document.querySelector("#kapus").innerHTML = elsoKapus()[0].vezeteknev;
     document.querySelector("#baloldalivedo").innerHTML = elsoBaloldaliVedo()[0].vezeteknev;
@@ -244,6 +272,8 @@ function irdKiKekBuborekba() {
     document.querySelector("#jobbszelso").innerHTML = elsoJobbSzelso()[0].vezeteknev;
     document.querySelector("#jobboldalikozeppalyas").innerHTML = elsoJobbOldaliKozeppalyas()[0].vezeteknev;
     document.querySelector("#baloldalikozeppalyas").innerHTML = elsoBalOldaliKozeppalyas()[0].vezeteknev;
+    document.querySelector("#kozepcsatar").innerHTML = elsoKozepCsatar()[0].vezeteknev;
+    document.querySelector("#hatravontcsatar").innerHTML = elsoHatravontCsatar()[0].vezeteknev;
 }
 
 

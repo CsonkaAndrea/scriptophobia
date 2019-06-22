@@ -167,7 +167,20 @@ function elsoJobbOldaliKozeppalyas() {
     return elsoJobbOldaliKozeppalyas;
 }
 
-//Megkeresi a kiválasztott csapat jobb oldali középpályását:
+//Megkeresi a kiválasztott csapat bal oldali középpályását:
+function elsoBalOldaliKozeppalyas() {
+    var elsoBalOldaliKozeppalyas = [];
+
+    for (var i = 0; i < kivalasztottCsapatJatekosai().length; i++) {
+        if (kivalasztottCsapatJatekosai()[i].poszt == "bal oldali középpályás") {
+            elsoBalOldaliKozeppalyas.push(kivalasztottCsapatJatekosai()[i]);
+            break;
+        }
+    }
+    return elsoBalOldaliKozeppalyas;
+}
+
+//Megkeresi a kiválasztott csapat első támadó középpályását:
 function elsoTamadoKozeppalyas() {
     var elsoTamadoKozeppalyas = [];
 
@@ -180,6 +193,32 @@ function elsoTamadoKozeppalyas() {
     return elsoTamadoKozeppalyas;
 }
 
+//Megkeresi a kiválasztott csapat első bal szélsőjét:
+function elsoBalSzelso() {
+    var elsoBalSzelso = [];
+
+    for (var i = 0; i < kivalasztottCsapatJatekosai().length; i++) {
+        if (kivalasztottCsapatJatekosai()[i].poszt == "bal szélső") {
+            elsoBalSzelso.push(kivalasztottCsapatJatekosai()[i]);
+            break;
+        }
+    }
+    return elsoBalSzelso;
+}
+
+//Megkeresi a kiválasztott csapat első jobb szélsőjét:
+function elsoJobbSzelso() {
+    var elsoJobbSzelso = [];
+
+    for (var i = 0; i < kivalasztottCsapatJatekosai().length; i++) {
+        if (kivalasztottCsapatJatekosai()[i].poszt == "jobb szélső") {
+            elsoJobbSzelso.push(kivalasztottCsapatJatekosai()[i]);
+            break;
+        }
+    }
+    return elsoJobbSzelso;
+}
+
 //Kiírja a játékosokat onchange hatására
 function irdKiKekBuborekba() {
     document.querySelector("#kapus").innerHTML = "";
@@ -190,6 +229,9 @@ function irdKiKekBuborekba() {
     document.querySelector("#belsokozeppalyas").innerHTML = "";
     document.querySelector("#jobboldalikozeppalyas").innerHTML = "";
     document.querySelector("#tamadokozeppalyas").innerHTML = "";
+    document.querySelector("#balszelso").innerHTML = "";
+    document.querySelector("#jobbszelso").innerHTML = "";
+    document.querySelector("#baloldalikozeppalyas").innerHTML = "";
 
     document.querySelector("#kapus").innerHTML = elsoKapus()[0].vezeteknev;
     document.querySelector("#baloldalivedo").innerHTML = elsoBaloldaliVedo()[0].vezeteknev;
@@ -198,6 +240,10 @@ function irdKiKekBuborekba() {
     document.querySelector("#jobboldalivedo").innerHTML = elsoJobboldaliVedo()[0].vezeteknev;
     document.querySelector("#belsokozeppalyas").innerHTML = elsoBelsoKozeppalyas()[0].vezeteknev;
     document.querySelector("#tamadokozeppalyas").innerHTML = elsoTamadoKozeppalyas()[0].vezeteknev;
+    document.querySelector("#balszelso").innerHTML = elsoBalSzelso()[0].vezeteknev;
+    document.querySelector("#jobbszelso").innerHTML = elsoJobbSzelso()[0].vezeteknev;
+    document.querySelector("#jobboldalikozeppalyas").innerHTML = elsoJobbOldaliKozeppalyas()[0].vezeteknev;
+    document.querySelector("#baloldalikozeppalyas").innerHTML = elsoBalOldaliKozeppalyas()[0].vezeteknev;
 }
 
 

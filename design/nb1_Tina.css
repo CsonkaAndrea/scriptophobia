@@ -65,12 +65,27 @@ span {
 
 #jobboldalikozeppalyas {
     top: 450px;
-    left: 620px;
+    left: 600px;
+}
+
+#baloldalikozeppalyas {
+    top: 200px;
+    left: 700px;
 }
 
 #tamadokozeppalyas {
     top: 350px;
     left: 700px;
+}
+
+#balszelso {
+    top: 120px;
+    left: 800px;
+}
+
+#jobbszelso {
+    top: 470px;
+    left: 800px;
 }
 
 

@@ -1,42 +1,55 @@
 //'use strict';
 
 //Kilistázza a csapatok nevét:
-// function csapatokLekerese() {
-//     var csapatokListaja = [];
+function csapatokLekerese() {
+    var csapatokListaja = [];
 
-//     for (var i = 0; i < data.length; i++) {
-//         if (csapatokListaja.indexOf(data[i].klub) == -1) { //ha a csapatokListaja nevű tömbünkben nincs még olyan nevű klub, mint az adatbázisban, akkor
-//             csapatokListaja.push(data[i].klub); //fűzze hozzá a csapatokListaja tömbünkhöz.
-//         }
-//     }
-//     return csapatokListaja;
-// }
-// console.log(csapatokLekerese());
+    for (var i = 0; i < data.length; i++) {
+        if (csapatokListaja.indexOf(data[i].klub) == -1) { //ha a csapatokListaja nevű tömbünkben nincs még olyan nevű klub, mint az adatbázisban, akkor
+            csapatokListaja.push(data[i].klub); //fűzze hozzá a csapatokListaja tömbünkhöz.
+        }
+    }
+    return csapatokListaja;
+}
+console.log(csapatokLekerese());
 
-// //Kilistázza a csapatokat és azon belül a játékosokat és a játékosok minden adatát:
-// function PlayersByClub() {
-//     var result = [];
-//     var clubs = csapatokLekerese();
-//     var player;
+//Posztok kilistázása:
+function posztokListaja() {
+    var posztok = [];
 
-//     for (var i = 0; i < clubs.length; i++) {
-//         result.push({
-//             name: clubs[i],
-//             players: []
-//         });
-//     }
-//     for (var i = 0; i < data.length; i++) {
+    for (var i = 0; i < data.length; i++) {
+        if (posztok.indexOf(data[i].poszt) == -1) {
+            posztok.push(data[i].poszt);
+        }
+    }
+    return posztok;
+}
+console.log(posztokListaja());
 
-//         for (var j = 0; j < data.length; j++) {
-//             if (result[j].name === data[i].klub) {
-//                 result[j].players.push(data[i]);
-//                 break;
-//             }
-//         }
-//     }
-//     return result;
-// }
-// console.log(PlayersByClub());
+//Kilistázza a csapatokat és azon belül a játékosokat és a játékosok minden adatát:
+function PlayersByClub() {
+    var result = [];
+    var clubs = csapatokLekerese();
+    var player;
+
+    for (var i = 0; i < clubs.length; i++) {
+        result.push({
+            name: clubs[i],
+            players: []
+        });
+    }
+    for (var i = 0; i < data.length; i++) {
+
+        for (var j = 0; j < data.length; j++) {
+            if (result[j].name === data[i].klub) {
+                result[j].players.push(data[i]);
+                break;
+            }
+        }
+    }
+    return result;
+}
+console.log(PlayersByClub());
 
 
 // Elkérjük a kiválasztott csapat nevét:
@@ -102,10 +115,23 @@ function elsoKozepsoVedo() {
     return elsoKozepsoVedo;
 }
 
+//Megkeresi a kiválasztott csapat első védekező középpályását:
+function elsoVedekezoKozeppalyas() {
+    var elsoVedekezoKozeppalyas = [];
+
+    for (var i = 0; i < kivalasztottCsapatJatekosai().length; i++) {
+        if (kivalasztottCsapatJatekosai()[i].poszt == "jobb oldali védő") {
+            elsoVedekezoKozeppalyas.push(kivalasztottCsapatJatekosai()[i]);
+            break;
+        }
+    }
+    return elsoVedekezoKozeppalyas;
+}
 
 document.querySelector("#kapus").innerHTML = elsoKapus()[0].vezeteknev;
 document.querySelector("#baloldalivedo").innerHTML = elsoBaloldaliVedo()[0].vezeteknev;
 document.querySelector("#kozepsovedo").innerHTML = elsoKozepsoVedo()[0].vezeteknev;
+document.querySelector("#VedekezoKozeppalyas").innerHTML = elsoVedekezoKozeppalyas()[0].vezeteknev;
 
 
 
@@ -123,31 +149,7 @@ document.querySelector("#kozepsovedo").innerHTML = elsoKozepsoVedo()[0].vezetekn
 
 
 
-//Kilistázza egy adott csapat játékosait és a játékosok minden adatát:
-// function adottCsapatJatekosai(csapatNeve) {
-//     var jatekosok = [];
 
-//     for (var i = 0; i < data.length; i++) {
-//         if (data[i].klub.indexOf(csapatNeve) != -1) {
-//             jatekosok.push(data[i]);
-//         }
-//     }
-//     return jatekosok;
-// }
-// //console.log(adottCsapatJatekosai('Debrecen'));
-
-//Lekérdezzük a kiválasztott csapat kapusát:
-// function kapusKivalasztottCsapatbol() {
-//     var kapus;
-
-//     for (var i = 0; i < data.length; i++) {
-//         if (data[i].klub.indexOf(selected()) != -1) {
-//             kapus = data[i].klub.vezeteknev;
-//         }
-//     }
-//     return kapus;
-// }
-// console.log(kapusKivalasztottCsapatbol());
 
 
 //Lekérdezzük egy tetszőleges csapat kapusát:

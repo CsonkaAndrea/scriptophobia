@@ -1,0 +1,28 @@
+body{
+    background-image: url(/scriptophobia/images/hatterSara.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+background-size: cover
+}
+h1{
+    color: white;
+
+}
+h2{
+    color: rgb(0,128,0)
+}
+h3{
+    color: white
+}
+li{
+    color: white
+}
+#clubName{
+    color: rgb(0,128,0)
+}
+label{
+    color: white
+}
+div{
+    color:white
+}

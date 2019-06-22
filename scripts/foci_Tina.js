@@ -102,7 +102,7 @@ function elsoBaloldaliVedo() {
     return elsoBaloldaliVedo;
 }
 
-//Megkeresi a kiválasztott csapat középső védőjét:
+//Megkeresi a kiválasztott csapat első középső védőjét:
 function elsoKozepsoVedo() {
     var elsoKozepsoVedo = [];
 
@@ -154,14 +154,36 @@ function elsoBelsoKozeppalyas() {
     return elsoBelsoKozeppalyas;
 }
 
+//Megkeresi a kiválasztott csapat jobb oldali középpályását:
+function elsoJobbOldaliKozeppalyas() {
+    var elsoJobbOldaliKozeppalyas = [];
+
+    for (var i = 0; i < kivalasztottCsapatJatekosai().length; i++) {
+        if (kivalasztottCsapatJatekosai()[i].poszt == "jobb oldali középpályás") {
+            elsoJobbOldaliKozeppalyas.push(kivalasztottCsapatJatekosai()[i]);
+            break;
+        }
+    }
+    return elsoJobbOldaliKozeppalyas;
+}
+
 //Kiírja a játékosokat onchange hatására
 function irdKiKekBuborekba() {
+    document.querySelector("#kapus").innerHTML = "";
+    document.querySelector("#baloldalivedo").innerHTML = "";
+    document.querySelector("#kozepsovedo").innerHTML = "";
+    document.querySelector("#vedekezokozeppalyas").innerHTML = "";
+    document.querySelector("#jobboldalivedo").innerHTML = "";
+    document.querySelector("#belsokozeppalyas").innerHTML = "";
+    document.querySelector("#jobboldalikozeppalyas").innerHTML = "";
+
     document.querySelector("#kapus").innerHTML = elsoKapus()[0].vezeteknev;
     document.querySelector("#baloldalivedo").innerHTML = elsoBaloldaliVedo()[0].vezeteknev;
     document.querySelector("#kozepsovedo").innerHTML = elsoKozepsoVedo()[0].vezeteknev;
     document.querySelector("#vedekezokozeppalyas").innerHTML = elsoVedekezoKozeppalyas()[0].vezeteknev;
     document.querySelector("#jobboldalivedo").innerHTML = elsoJobboldaliVedo()[0].vezeteknev;
     document.querySelector("#belsokozeppalyas").innerHTML = elsoBelsoKozeppalyas()[0].vezeteknev;
+    document.querySelector("#jobboldalikozeppalyas").innerHTML = elsoJobbOldaliKozeppalyas()[0].vezeteknev;
 }
 
 

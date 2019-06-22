@@ -1,4 +1,3 @@
-
 label {
     position: relative;
     left: 220px;
@@ -39,7 +38,12 @@ span {
 
 #baloldalivedo {
     top: 150px;
-    left: -50px;
+    left: -35px;
+}
+
+#kozepsovedo {
+    top: 285px;
+    left: -110px;
 }
 
 
@@ -66,5 +70,5 @@ html {
     background-color: none;
     padding: 10px;
     border: 1px solid black;
-    
+
 }

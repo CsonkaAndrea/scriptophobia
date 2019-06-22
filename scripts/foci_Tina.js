@@ -63,7 +63,7 @@ function selection() {
 }
 
 
-//Kilistázza a kiválasztott csapat játékosait és a játékosok minden adatát:
+// Kilistázza a kiválasztott csapat játékosait és a játékosok minden adatát:
 function kivalasztottCsapatJatekosai() {
     var jatekosok = [];
 
@@ -120,7 +120,7 @@ function elsoVedekezoKozeppalyas() {
     var elsoVedekezoKozeppalyas = [];
 
     for (var i = 0; i < kivalasztottCsapatJatekosai().length; i++) {
-        if (kivalasztottCsapatJatekosai()[i].poszt == "jobb oldali védő") {
+        if (kivalasztottCsapatJatekosai()[i].poszt == "védekező középpályás") {
             elsoVedekezoKozeppalyas.push(kivalasztottCsapatJatekosai()[i]);
             break;
         }
@@ -128,10 +128,38 @@ function elsoVedekezoKozeppalyas() {
     return elsoVedekezoKozeppalyas;
 }
 
+//Megkeresi a kiválasztott csapat első jobboldali védőjét:
+function elsoJobboldaliVedo() {
+    var elsoJobboldaliVedo = [];
+
+    for (var i = 0; i < kivalasztottCsapatJatekosai().length; i++) {
+        if (kivalasztottCsapatJatekosai()[i].poszt == "jobb oldali védő") {
+            elsoJobboldaliVedo.push(kivalasztottCsapatJatekosai()[i]);
+            break;
+        }
+    }
+    return elsoJobboldaliVedo;
+}
+
+//Megkeresi a kiválasztott csapat első belső középpályását:
+function elsoBelsoKozeppalyas() {
+    var elsoBelsoKozeppalyas = [];
+
+    for (var i = 0; i < kivalasztottCsapatJatekosai().length; i++) {
+        if (kivalasztottCsapatJatekosai()[i].poszt == "belső középpályás") {
+            elsoBelsoKozeppalyas.push(kivalasztottCsapatJatekosai()[i]);
+            break;
+        }
+    }
+    return elsoBelsoKozeppalyas;
+}
+
 document.querySelector("#kapus").innerHTML = elsoKapus()[0].vezeteknev;
 document.querySelector("#baloldalivedo").innerHTML = elsoBaloldaliVedo()[0].vezeteknev;
 document.querySelector("#kozepsovedo").innerHTML = elsoKozepsoVedo()[0].vezeteknev;
-document.querySelector("#VedekezoKozeppalyas").innerHTML = elsoVedekezoKozeppalyas()[0].vezeteknev;
+document.querySelector("#vedekezokozeppalyas").innerHTML = elsoVedekezoKozeppalyas()[0].vezeteknev;
+document.querySelector("#jobboldalivedo").innerHTML = elsoJobboldaliVedo()[0].vezeteknev;
+document.querySelector("#belsokozeppalyas").innerHTML = elsoBelsoKozeppalyas()[0].vezeteknev;
 
 
 

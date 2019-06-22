@@ -46,9 +46,19 @@ span {
     left: -110px;
 }
 
-#VedekezoKozeppalyas {
+#vedekezokozeppalyas {
     top: 220px;
     left: -50px;
+}
+
+#jobboldalivedo {
+    top: 400px;
+    left: -250px;
+}
+
+#belsokozeppalyas {
+    top: 285px;
+    left: -110px;
 }
 
 

@@ -154,15 +154,12 @@ function elsoBelsoKozeppalyas() {
     return elsoBelsoKozeppalyas;
 }
 
-//Kiírja a játékosokat onchange hatására
-function irdKiKekBuborekba() {
-    document.querySelector("#kapus").innerHTML = elsoKapus()[0].vezeteknev;
-    document.querySelector("#baloldalivedo").innerHTML = elsoBaloldaliVedo()[0].vezeteknev;
-    document.querySelector("#kozepsovedo").innerHTML = elsoKozepsoVedo()[0].vezeteknev;
-    document.querySelector("#vedekezokozeppalyas").innerHTML = elsoVedekezoKozeppalyas()[0].vezeteknev;
-    document.querySelector("#jobboldalivedo").innerHTML = elsoJobboldaliVedo()[0].vezeteknev;
-    document.querySelector("#belsokozeppalyas").innerHTML = elsoBelsoKozeppalyas()[0].vezeteknev;
-}
+document.querySelector("#kapus").innerHTML = elsoKapus()[0].vezeteknev;
+document.querySelector("#baloldalivedo").innerHTML = elsoBaloldaliVedo()[0].vezeteknev;
+document.querySelector("#kozepsovedo").innerHTML = elsoKozepsoVedo()[0].vezeteknev;
+document.querySelector("#vedekezokozeppalyas").innerHTML = elsoVedekezoKozeppalyas()[0].vezeteknev;
+document.querySelector("#jobboldalivedo").innerHTML = elsoJobboldaliVedo()[0].vezeteknev;
+document.querySelector("#belsokozeppalyas").innerHTML = elsoBelsoKozeppalyas()[0].vezeteknev;
 
 
 

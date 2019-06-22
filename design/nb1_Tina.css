@@ -14,8 +14,8 @@ label {
 
 select {
     position: relative;
-    left: 35px;
-    top: 40px;
+    left: 220px;
+    top: 10px;
     color: #fff;
     background-color: darkorange;
     border-radius: 20px;
@@ -23,42 +23,44 @@ select {
 }
 
 span {
-    position: relative;
+    position: absolute;
     color: white;
-    font-weight: bold;
+    font-family: Verdana;
+    font-size: 11px;
     background-color: darkblue;
     padding: 8px;
     border-radius: 15px;
-}
+    
+    }
 
 #kapus {
-    top: 285px;
-    left: -140px;
+    top: 270px;
+    left: 250px;
 }
 
 #baloldalivedo {
     top: 150px;
-    left: -35px;
+    left: 400px;
 }
 
 #kozepsovedo {
     top: 285px;
-    left: -110px;
+    left: 400px;
 }
 
 #vedekezokozeppalyas {
-    top: 220px;
-    left: -50px;
+    top: 210px;
+    left: 480px;
 }
 
 #jobboldalivedo {
-    top: 400px;
-    left: -250px;
+    top: 420px;
+    left: 400px;
 }
 
 #belsokozeppalyas {
-    top: 285px;
-    left: -110px;
+    top: 270px;
+    left: 620px;
 }
 
 

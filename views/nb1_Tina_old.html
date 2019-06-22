@@ -10,21 +10,21 @@
 </head>
 
 <body class="background">
-    <select id="selectedTeam" onchange="selection(); irdKiKekBuborekba();">
-        <option>Válassz ki egy csapatot!</option>
+    <label>Válassz ki egy csapatot!</label>
+    <select id="selectedTeam" onchange="selection()">
         <option id="fradi">Ferencvárosi TC</option>
         <option id="vasas">Vasas FC</option>
         <option id="ujpest">Újpest FC</option>
-        <option id="honved">Budapest Honvéd FC</option>
+        <option id="honved" selected>Budapest Honvéd FC</option>
         <option id="loki">Debreceni VSC</option>
     </select>
-
-    <span id="kapus">kapus</span>
-    <span id="baloldalivedo">bal oldali védő</span>
-    <span id="kozepsovedo">középső védő</span>
-    <span id="vedekezokozeppalyas">védekező középpályás</span>
-    <span id="jobboldalivedo">jobb oldali védő</span>
-    <span id="belsokozeppalyas">belső középpályás</span>
+    
+    <span id="kapus"></span>
+    <span id="baloldalivedo"></span>
+    <span id="kozepsovedo"></span>
+    <span id="vedekezokozeppalyas"></span>
+    <span id="jobboldalivedo"></span>
+    <span id="belsokozeppalyas"></span>
 
 
     <script src="../scripts/nb1.js"></script>

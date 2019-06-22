@@ -64,8 +64,13 @@ span {
 }
 
 #jobboldalikozeppalyas {
-    top: 400px;
+    top: 450px;
     left: 620px;
+}
+
+#tamadokozeppalyas {
+    top: 350px;
+    left: 700px;
 }
 
 

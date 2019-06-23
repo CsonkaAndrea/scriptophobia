@@ -1,0 +1,43 @@
+#clubs {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    list-style-type: none;
+    list-style-position: inside;
+    justify-content: space-between;
+    text-align: center;
+    margin: 0px;
+    padding: 0px;
+}
+
+.csapatok {
+    margin: 5px;
+    border: 3px solid black;
+    flex: 13%;
+    padding: 10px;
+    font-size: 18px;
+}
+
+#nb1,
+#betekinto {
+    text-align: center;
+    margin-top: 50px;
+}
+
+
+#stat-flex {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+#stat-flex div {
+    flex: 25%;
+    text-align: center;
+}
+
+.stat-title {
+    font-size: 18px;
+    font-weight: bold;
+}

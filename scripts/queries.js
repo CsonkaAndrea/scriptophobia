@@ -29,6 +29,7 @@ function klubokJatekosai(melyikKlub) {
             jatekosok.push(data[i].vezeteknev + ' ' + data[i].utonev)
         }
     }
+    jatekosok.sort();
     return jatekosok;
 }
 
@@ -78,7 +79,6 @@ function calcAge(szulido) {
     var dtToday = new Date();
     var dtBirthDate = new Date(szulido);
     age = dtToday.getFullYear() - dtBirthDate.getFullYear();
-
     return age;
 }
 
@@ -102,4 +102,132 @@ function maximumAge() {
     }
     return max;
 }
-console.log(maximumAge());
+document.querySelector('#oldest').innerHTML = maximumAge();
+
+function maximumAge() {
+    var max = calcAge(data[0].szulido);
+    for (var i = 0; i < data.length; i++) {
+        if (calcAge(data[i].szulido) > max) {
+            max = calcAge(data[i].szulido);
+        }
+    }
+    return max;
+}
+
+function oregEmber() {
+    var max = maximumAge();
+    var jatekosok = [];
+
+    for (var i = 0; i < data.length; i++) {
+        if (calcAge(data[i].szulido) === max) {
+            jatekosok.push({
+                lastName: data[i].vezeteknev,
+                firstName: data[i].utonev,
+                age: maximumAge()
+            });
+        }
+    }
+    return jatekosok;
+}
+
+function mutasdAzIdoset() {
+    var idosek = oregEmber();
+    s = '';
+    document.querySelector('#legidosebbKor').innerHTML = 'A legidősebb életkor: ' + maximumAge();
+
+    for (i = 0; i < idosek.length; i++) {
+        s += '<li>' + idosek[i].lastName + ' ' + idosek[i].firstName + '</li>';
+    }
+    document.querySelector('#legidosebb').innerHTML = s;
+    return s;
+}
+
+/* function fiatalEmber() {
+    var min = minimumAge();
+    var jatekosok = [];
+
+    for (var i = 0; i < data.length; i++) {
+        if (calcAge(data[i].szulido) === min) {
+            jatekosok.push(data[i].vezeteknev);
+            jatekosok.push(data[i].utonev);
+            jatekosok.push(minimumAge());
+        }
+    }
+    return jatekosok;
+}
+console.log(fiatalEmber()); */
+
+function fiatalEmber() {
+    var min = minimumAge();
+    var jatekosok = [];
+
+    for (var i = 0; i < data.length; i++) {
+        if (calcAge(data[i].szulido) === min) {
+            jatekosok.push({
+                lastName: data[i].vezeteknev,
+                firstName: data[i].utonev,
+                age: minimumAge()
+            });
+        }
+    }
+    return jatekosok;
+}
+
+
+function mutasdAFiatalt() {
+    var fiatalok = fiatalEmber();
+    s = '';
+    document.querySelector('#legfiatalabbKor').innerHTML = 'A legfiatalabb életkor: ' + minimumAge();
+
+    for (i = 0; i < fiatalok.length; i++) {
+        s += '<li>' + fiatalok[i].lastName + ' ' + fiatalok[i].firstName + '</li>';
+    }
+    document.querySelector('#legfiatalabb').innerHTML = s;
+    return s;
+}
+
+function positions() {
+    var posztok = [];
+    for (i = 0; i < data.length; i++) {
+        if (posztok.indexOf(data[i].poszt) == -1) {
+            posztok.push(data[i].poszt)
+        }
+    }
+    return posztok;
+
+}
+console.log(positions());
+
+function posztokLista() {
+    var posztok = positions();
+    var s = '';
+
+    for (i = 0; i < posztok.length; i++) {
+        s += '<option value="' + posztok[i] + '">' + posztok[i] + '</option>'
+    }
+    return s;
+}
+document.querySelector('#positions').innerHTML = posztokLista();
+
+function posztonkentBontas() {
+    var pozicio = document.querySelector('#positions').value
+    var players = [];
+    for (i = 0; i < data.length; i++) {
+        if (data[i].poszt === pozicio) {
+            players.push(data[i].klub + ' - ' + data[i].vezeteknev + ' ' + data[i].utonev)
+        }
+    }
+    return players;
+}
+
+function listaPosztonkent() {
+    var s = '';
+    var players = posztonkentBontas().sort();
+    document.querySelector('#valami').innerHTML = '';
+
+    for (i = 0; i < players.length; i++) {
+        s += '<li>' + players[i] + '</li>'
+    }
+    document.querySelector('#valami').innerHTML = s;
+    return s;
+}

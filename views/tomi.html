@@ -46,7 +46,27 @@
     <p id="youngestPlayer">A legfiatalabb játékos a ligában</p>
     <p id="youngest"></p>
 
-    <p></p>
+    <p id="oldestPlayer">A legidősebb játékos a ligában</p>
+    <p id="oldest"></p>
+
+    <div>
+        <button onclick="mutasdAzIdoset()">Legidősebb</button>
+        <p id="legidosebbKor"></p>
+        <ol id="legidosebb"></ol>
+    </div>
+
+    <div>
+        <button onclick="mutasdAFiatalt()">Legfiatalabb</button>
+        <p id="legfiatalabbKor"></p>
+        <ol id="legfiatalabb"></ol>
+    </div>
+
+    <select name="positions"
+            id="positions"
+            onchange="listaPosztonkent()">
+    </select>
+
+    <ul id="valami"></ul>
 
     <script src="/scripts/nb1.js"></script>
     <script src="/scripts/queries.js"></script>

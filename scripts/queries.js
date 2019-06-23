@@ -220,6 +220,7 @@ function oregEmber() {
             });
         }
     }
+    jatekosok.sort();
     return jatekosok;
 }
 
@@ -249,6 +250,7 @@ function fiatalEmber() {
             });
         }
     }
+    jatekosok.sort();
     return jatekosok;
 }
 

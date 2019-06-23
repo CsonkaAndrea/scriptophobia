@@ -1,5 +1,10 @@
 body {
-    background-color: wheat;
+    /* background-color: wheat; */
+    background-image: url(/images/background.png);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    margin-bottom: 20px;
 }
 
 #clubs {

@@ -1,0 +1,111 @@
+body {
+    background-color: wheat;
+}
+
+#clubs {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    list-style-type: none;
+    list-style-position: inside;
+    justify-content: space-between;
+    text-align: center;
+    margin: 0px;
+    padding: 0px;
+}
+
+.csapatok {
+    margin: 5px;
+    border: 3px solid black;
+    flex: 13%;
+    padding: 10px;
+    font-size: 18px;
+}
+
+h2 {
+    text-align: center;
+    margin-top: 50px;
+    border-top: 2px black solid;
+    border-bottom: 2px black solid;
+}
+
+
+#stat-flex {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+#stat-flex div {
+    flex: 25%;
+    text-align: center;
+}
+
+.stat-title {
+    font-size: 20px;
+    font-weight: bolder;
+}
+
+#stat-flex p:nth-of-type(2),
+#valuePlayers p:nth-of-type(2) {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+#valuePlayers {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+#valuePlayers div {
+    text-align: center;
+    flex: 50%;
+}
+
+#youngAndOld-flex {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    vertical-align: center;
+}
+
+img {
+    border-radius: 15px;
+    width: 500px;
+    height: 287px;
+}
+
+#teammates {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+#csapattagok,
+label,
+#positionsOfPlayers {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#playersList {
+    list-style-type: none;
+    margin-left: 0px;
+    padding-left: 0px;
+}
+
+#playersValue {
+    text-align: center;
+}
+
+#positionsList {
+    text-align: center;
+}
+
+#valami,
+#topPlayers {
+    list-style-type: none;
+}

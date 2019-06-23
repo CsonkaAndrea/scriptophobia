@@ -6,42 +6,59 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>NBI</title>
-    <link rel="stylesheet" type="text/css" href="/scriptophobia/design/nb1.css">
+    <link rel="stylesheet" type="text/css" href="/design/nb1.css">
 </head>
 
 <body>
+    <div class="header">
+        <div class="navbar" id="nav">
+
+            <ul>
+                <li><a href="andi.html">Andi</a></li>
+                <li><a href="nb1_Tina.html">Tina</a></li>
+                <li><a href="sara.html">Sára</a></li>
+                <li><a href="tomi.html">Tomi</a></li>
+                <li><a href="szilvi.html">Szilvi</a></li>
+            </ul>
+        </div>
+    </div>
+
     <h1>NBI</h1>
 
     <h2>Csoportosíts!</h2>
-    <h3>Klubbonként mutasd a játékosokat! <button onclick="DrowGroupBy();">Csoportosíts!</button></h3>
+    <h3>Klubbonként mutasd a játékosokat!
+        </h3>
+        <div>
+            <button onclick="DrowGroupBy();">Csoportosíts!</button>
+    </div>
     <ul id="csoportositasKlubbonkent"></ul>
 
 
     <h2>Keress!</h2>
     <h3>
-        <label for="playerName">Írd be a játékos vezeték nevét, kiadom az adatait!</label>
+        <label for="playerName">Add meg a keresendő játékos vezeték nevét, kiírom az adatait!</label>
         <input type="text" name="playerName" id="playerName" placeholder="Böde">
     </h3>
     <button type="button" onclick="DrawSomething();">Keress!</button>
 
 
     <ol id="jatekosFelsorolas"></ol>
-    <p>
+    <div>
         <button onclick="YoungestPlayer()">Írd ki a legfiatalabb játékos nevét és születési idejét!</button>
-    </p>
-    <p>
+    </div>
+    <div>
 
         <button onclick="OldestPlayer()">Írd ki a legidősebb játékos nevét és születési idejét!</button>
-    </p>
-    <p>
+    </div>
+    <div>
 
         <button onclick="AverageAge()">Add meg az átlag életkort!</button>
-    </p>
+    </div>
 
 
-    <script type="text/javascript" src="/scriptophobia/scripts/nb1.js"></script>
-    <script type="text/javascript" src="/scriptophobia/scripts/saraQueries_nb1.js"></script>
-    <script type="text/javascript" src="/scriptophobia/scripts/saraTestQueries_nb1.js"></script>
+    <script type="text/javascript" src="/scripts/nb1.js"></script>
+    <script type="text/javascript" src="/scripts/saraQueries_nb1.js"></script>
+    <script type="text/javascript" src="/scripts/saraTestQueries_nb1.js"></script>
 </body>
 
 </html>

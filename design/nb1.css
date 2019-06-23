@@ -1,28 +1,141 @@
-body{
-    background-image: url(/scriptophobia/images/hatterSara.jpg);
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-background-size: cover
+* {
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-h1{
+
+
+.navbar {
+    width: 100%;
+    padding: 20px;
+
+    top: 0px;
+    transition: .5s;
+    text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
+
+.navbar ul li {
+    list-style-type: none;
+    display: inline-block;
+    padding: 10px 50px;
+
+    font-size: 30px;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: .5s;
+}
+
+.navbar ul li a {
+    text-decoration: none;
     color: white;
+    text-shadow: 2px 3px #000000;
 
 }
-h2{
-    color: rgb(0,128,0)
+
+.navbar ul li:hover {
+    background: yellow;
 }
-h3{
-    color: white
+
+body {
+    background-image: url(/images/hatterSara.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    margin-bottom: 20px;
+
 }
-li{
-    color: white
+
+h1 {
+    margin: 30px 10px 10px 10px;
+    text-align: center;
+    color: white;
+    text-shadow: 2px 3px #000000;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    padding: 10px;
 }
-#clubName{
-    color: rgb(0,128,0)
+
+h2 {
+    margin: 10px 10px 10px 10px;
+    text-align: center;
+    color: greenyellow;
+    text-shadow: 2px 3px #000000;
+    font-size: 25px;
+    padding: 5px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
 }
-label{
-    color: white
+
+h3 {
+    margin: 10px 10px 10px 10px;
+    text-align: center;
+    color: white;
+    text-shadow: 2px 3px #000000;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
 }
-div{
-    color:white
+
+li {
+    margin: 10px 10px 10px 10px;
+    text-align: center;
+    color: white;
+    text-shadow: 2px 3px #000000;
+    font-size: 18px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
+
+#clubName {
+    margin: 10px 10px 10px 10px;
+    text-align: center;
+    color: greenyellow;
+    text-shadow: 2px 3px #000000;
+    font-size: 20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
+
+label {
+    margin: 10px 10px 10px 10px;
+    text-align: center;
+    color: white;
+    text-shadow: 2px 3px #000000;
+    font-size: 20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
+
+div {
+    margin: 10px 10px 10px 10px;
+    text-align: center;
+    color: white;
+    text-shadow: 2px 3px #000000;
+    font-size: 14px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
+
+button {
+    background-color: #E6E6FA;
+    border: solid 1px #000000;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: auto;
+    padding: 3px;
+    display: block;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 14px;
+}
+
+input[type=text] {
+    border: solid 2px #cccccc;
+    border-radius: 4px;
+    font-size: 14px;
+    background-color: white;
+    padding: 10px;
+    width: 100px;
+    box-sizing: border-box;
+    transition: all 0.4s last-in-out;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
+
+input[type=text]:focus {
+    width: 200px;
+
 }

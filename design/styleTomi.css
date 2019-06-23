@@ -104,3 +104,8 @@ label,
 #positionsList {
     text-align: center;
 }
+
+#valami,
+#topPlayers {
+    list-style-type: none;
+}

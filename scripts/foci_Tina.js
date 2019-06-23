@@ -1,56 +1,4 @@
-//'use strict';
-
-//Kilistázza a csapatok nevét:
-function csapatokLekerese() {
-    var csapatokListaja = [];
-
-    for (var i = 0; i < data.length; i++) {
-        if (csapatokListaja.indexOf(data[i].klub) == -1) { //ha a csapatokListaja nevű tömbünkben nincs még olyan nevű klub, mint az adatbázisban, akkor
-            csapatokListaja.push(data[i].klub); //fűzze hozzá a csapatokListaja tömbünkhöz.
-        }
-    }
-    return csapatokListaja;
-}
-console.log(csapatokLekerese());
-
-//Posztok kilistázása:
-function posztokListaja() {
-    var posztok = [];
-
-    for (var i = 0; i < data.length; i++) {
-        if (posztok.indexOf(data[i].poszt) == -1) {
-            posztok.push(data[i].poszt);
-        }
-    }
-    return posztok;
-}
-console.log(posztokListaja());
-
-//Kilistázza a csapatokat és azon belül a játékosokat és a játékosok minden adatát:
-function PlayersByClub() {
-    var result = [];
-    var clubs = csapatokLekerese();
-    var player;
-
-    for (var i = 0; i < clubs.length; i++) {
-        result.push({
-            name: clubs[i],
-            players: []
-        });
-    }
-    for (var i = 0; i < data.length; i++) {
-
-        for (var j = 0; j < data.length; j++) {
-            if (result[j].name === data[i].klub) {
-                result[j].players.push(data[i]);
-                break;
-            }
-        }
-    }
-    return result;
-}
-console.log(PlayersByClub());
-
+'use strict';
 
 // Elkérjük a kiválasztott csapat nevét:
 function selection() {
@@ -74,6 +22,7 @@ function kivalasztottCsapatJatekosai() {
     }
     return jatekosok;
 }
+
 
 
 //Megkeresi a kiválasztott csapat első kapusát:
@@ -219,6 +168,7 @@ function elsoJobbSzelso() {
     return elsoJobbSzelso;
 }
 
+
 //Megkeresi a kiválasztott csapat első középcsatárát:
 function elsoKozepCsatar() {
     var elsoKozepCsatar = [];
@@ -232,18 +182,6 @@ function elsoKozepCsatar() {
     return elsoKozepCsatar;
 }
 
-//Megkeresi a kiválasztott csapat első hátravont csatárát:
-function elsoHatravontCsatar() {
-    var elsoHatravontCsatar = [];
-
-    for (var i = 0; i < kivalasztottCsapatJatekosai().length; i++) {
-        if (kivalasztottCsapatJatekosai()[i].poszt == "hátravont csatár") {
-            elsoHatravontCsatar.push(kivalasztottCsapatJatekosai()[i]);
-            break;
-        }
-    }
-    return elsoHatravontCsatar;
-}
 
 //Kiírja a játékosokat onchange hatására
 function irdKiKekBuborekba() {
@@ -253,13 +191,12 @@ function irdKiKekBuborekba() {
     document.querySelector("#vedekezokozeppalyas").innerHTML = "";
     document.querySelector("#jobboldalivedo").innerHTML = "";
     document.querySelector("#belsokozeppalyas").innerHTML = "";
-    document.querySelector("#jobboldalikozeppalyas").innerHTML = "";
     document.querySelector("#tamadokozeppalyas").innerHTML = "";
     document.querySelector("#balszelso").innerHTML = "";
     document.querySelector("#jobbszelso").innerHTML = "";
+    document.querySelector("#jobboldalikozeppalyas").innerHTML = "";
     document.querySelector("#baloldalikozeppalyas").innerHTML = "";
     document.querySelector("#kozepcsatar").innerHTML = "";
-    document.querySelector("#hatravontcsatar").innerHTML = "";
 
     document.querySelector("#kapus").innerHTML = elsoKapus()[0].vezeteknev;
     document.querySelector("#baloldalivedo").innerHTML = elsoBaloldaliVedo()[0].vezeteknev;
@@ -273,53 +210,72 @@ function irdKiKekBuborekba() {
     document.querySelector("#jobboldalikozeppalyas").innerHTML = elsoJobbOldaliKozeppalyas()[0].vezeteknev;
     document.querySelector("#baloldalikozeppalyas").innerHTML = elsoBalOldaliKozeppalyas()[0].vezeteknev;
     document.querySelector("#kozepcsatar").innerHTML = elsoKozepCsatar()[0].vezeteknev;
-    document.querySelector("#hatravontcsatar").innerHTML = elsoHatravontCsatar()[0].vezeteknev;
 }
 
 
+//Kilistázza a csapatok nevét:
+function csapatokLekerese() {
+    var csapatokListaja = [];
+
+    for (var i = 0; i < data.length; i++) {
+        if (csapatokListaja.indexOf(data[i].klub) == -1) { //ha a csapatokListaja nevű tömbünkben nincs még olyan nevű klub, mint az adatbázisban, akkor
+            csapatokListaja.push(data[i].klub); //fűzze hozzá a csapatokListaja tömbünkhöz.
+        }
+    }
+    return csapatokListaja;
+}
+console.log(csapatokLekerese());
 
 
+//Posztok kilistázása:
+function posztokListaja() {
+    var posztok = [];
+
+    for (var i = 0; i < data.length; i++) {
+        if (posztok.indexOf(data[i].poszt) == -1) {
+            posztok.push(data[i].poszt);
+        }
+    }
+    return posztok;
+}
+console.log(posztokListaja());
 
 
+// //Kilistázza a csapatokat és azon belül a játékosokat és a játékosok minden adatát:
+function PlayersByClub() {
+    var result = [];
+    var clubs = csapatokLekerese();
+    var player;
+
+    for (var i = 0; i < clubs.length; i++) {
+        result.push({
+            name: clubs[i],
+            players: []
+        });
+    }
+    for (var i = 0; i < data.length; i++) {
+
+        for (var j = 0; j < data.length; j++) {
+            if (result[j].name === data[i].klub) {
+                result[j].players.push(data[i]);
+                break;
+            }
+        }
+    }
+    return result;
+}
+console.log(PlayersByClub());
 
 
+//Kilistázza a kiválasztott poszton lévő játékosok nevét és egyéb adatait:
+function adottPosztonLevoJatekosok(melyikPoszton) {
+    var posztonLevoJatekosokTombje = [];
 
-
-
-
-
-
-
-
-
-
-
-
-//Lekérdezzük egy tetszőleges csapat kapusát:
-// function elsoKapusXCsapatbol(xCsapat) {
-//     var firstKapus = [];
-
-//     for (var i = 0; i < data.length; i++) {
-//         if (data[i].klub.indexOf(xCsapat) != -1) {
-//             for(j=0; j<)
-
-//             firstKapus = data[i].klub.poszt;
-//             break;
-//         }
-//     }
-//     return firstKapus;
-// }
-// console.log(elsoKapusXCsapatbol('Debrecen'));
-
-
-
-// function csapatokMegjelenitese() {
-//     var s = "";
-
-//     for (var i = 0; i < csapatokLekerese.length; i++) {
-//         s += "<option>" + csapatokLekerese[i] + "</option>";
-//     }
-//     return s;
-// }
-
-//document.querySelector("#csapat_1").innerHTML = csapatokMegjelenitese(csapatokLekerese());
+    for (var i = 0; i < data.length; i++) {
+        if (data[i].poszt.indexOf(melyikPoszton) != -1) {
+            posztonLevoJatekosokTombje.push(data[i]);
+        }
+    }
+    return posztonLevoJatekosokTombje;
+}
+console.log(adottPosztonLevoJatekosok("középcsatár"));

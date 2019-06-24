@@ -7,40 +7,74 @@
           content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible"
           content="ie=edge">
-    <title>Szilvi oldal</title>
+    <title>Főoldal</title>
     <link rel="stylesheet"
           href="/design/index.css">
 </head>
 
 <body>
+    <div class="header">
+        <div class="navbar"
+             id="nav">
 
-    <input type="text"
-           id="txtSearch">
+            <ul>
+                <li><a href="andi.html">Andi</a></li>
+                <li><a href="nb1_Tina.html">Tina</a></li>
+                <li><a href="sara.html">Sára</a></li>
+                <li><a href="tomi.html">Tomi</a></li>
+                <li><a href="szilvi.html">Szilvi</a></li>
+            </ul>
+        </div>
+    </div>
 
-    <button type="button"
-            onclick="drawSomething();">Keresés</button>
-
-    <ul id="jatekosFelsorolas"></ul>
+   
 
 
+    <div class="bekezdes">
+          
+      Keresztnév alapján kereshetsz, írj be egy keresztnevet!
 
-
-    <input type="text"
-    id="vezNevSearch">
-
+      <input type="text"
+      id="txtSearch">
+ &nbsp;    
 <button type="button"
-     onclick="drawSomethingVezName();">Keresés</button>
+       onclick="drawSomething();">Keresés</button>
+
+<ul id="jatekosFelsorolas"></ul>
+
+<br>
+<hr>
+<br> 
+Vezetéknév alapján kereshetsz írj be egy vezetéknevet:
+
+
+<input type="text"
+id="vezNevSearch">
+&nbsp;
+<button type="button"
+onclick="drawSomethingVezName();">Keresés</button>
 
 <ul id="vezNevJatekosFelsorolas"></ul>
+    </div>
 
 
-
-
-
-
-    <script src="/scripts/nb1.js"></script>
     <script src="/scripts/szilvi.js"></script>
-   
+    <script src="/scripts/nb1.js"></script>
+    <script>
+        var nav = document.getElementById('nav');
+        window.onscroll = function () {
+            if (window.pageYOffset > 100) {
+                nav.style.background = "#009cab";
+                nav.style.boxShadow = "0px 4px 2px; blue";
+            } else {
+                nav.style.background = "transparent";
+                nav.style.boxShadow = "none";
+            }
+        }
+    </script>
 </body>
 
 </html>
+
+---------
+

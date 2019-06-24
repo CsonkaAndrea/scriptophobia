@@ -61,7 +61,10 @@ footer {
     text-align: center;
     padding-bottom: 15px;
     padding-top: 15px;
+}
 
+#footerID {
+    list-style-type: none;
 }
 
 #clubs {

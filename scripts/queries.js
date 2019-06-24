@@ -1,3 +1,4 @@
+//Klubok kilistázása tömbbe
 function milyenKlubok() {
     var klubok = [];
 
@@ -10,7 +11,9 @@ function milyenKlubok() {
     klubok = klubok.sort();
     return klubok;
 }
+//-----------------------------
 
+//Klubok megrajzolása listába
 function drawUnorderedList(melyikHalmaz) {
     var s = "";
 
@@ -21,7 +24,9 @@ function drawUnorderedList(melyikHalmaz) {
     return s;
 }
 document.querySelector('#clubs').innerHTML = drawUnorderedList(milyenKlubok());
+//------------------------------
 
+//Játéksok klub szerinti csoportosítása tömbbe
 function klubokJatekosai(melyikKlub) {
     var jatekosok = [];
 
@@ -33,8 +38,9 @@ function klubokJatekosai(melyikKlub) {
     jatekosok.sort();
     return jatekosok;
 }
+//-------------------------------
 
-//kiírja console-ra a gomb value-ját
+//megrajzolja listába a választott klubok játékosait
 function tellTheClubValue() {
     var club = document.querySelector("#playersOfClubs").value;
     //console.log(club);
@@ -44,7 +50,8 @@ function tellTheClubValue() {
     }
     return club;
 }
-//console.log(klubokJatekosai('Vasas FC'));
+//----------------------------------------
+
 
 function hunPlayers() {
     var hunPlayersCount = 0;
@@ -112,6 +119,8 @@ function AvgAge() {
 }
 document.querySelector('#avgAge').innerHTML = parseInt(AvgAge()) + ' év';
 
+
+
 function legertekesebbJatekos() {
     var legdragabb = data[0].ertek;
     var dragaJatekos = [];
@@ -143,6 +152,8 @@ function mutasdALegdragabbat() {
     return s;
 }
 document.querySelector('#mostExpensive').innerHTML = mutasdALegdragabbat();
+
+
 
 function cheapestPlayers() {
     var cheapest = data[0].ertek;
@@ -176,6 +187,8 @@ function mutasdALegolcsobbat() {
 }
 document.querySelector('#cheapest').innerHTML = mutasdALegolcsobbat();
 
+
+
 function minimumAge() {
     var min = calcAge(data[0].szulido);
     for (var i = 0; i < data.length; i++) {
@@ -185,6 +198,7 @@ function minimumAge() {
     }
     return min;
 }
+
 
 function maximumAge() {
     var max = calcAge(data[0].szulido);
@@ -278,6 +292,8 @@ function positions() {
 
 }
 //console.log(positions());
+
+
 
 function posztokLista() {
     var posztok = positions();

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible"
+          content="ie=edge">
+    <link rel="stylesheet"
+          href="/design/styleTomi.css">
+
+    <title>Tomi</title>
+</head>
+
+<body>
+
+    <h2 id="nb1">Csapatok az NB1-ben:</h2>
+
+    <ul id="clubs"></ul>
+
+    <h2 id="betekinto">Betekintő az NB1-es ligába</h2>
+
+    <div id="stat-flex">
+        <div>
+            <p class="stat-title">Magyar játékosok száma</p>
+            <p id="hunPlayers"></p>
+        </div>
+
+        <div>
+            <p class="stat-title">Külföldi játékosok száma</p>
+            <p id="foreignPlayers"></p>
+        </div>
+
+        <div>
+            <p class="stat-title">Kettős állampolgárságú játékosok</p>
+            <p id="doublePlayers"></p>
+        </div>
+
+        <div>
+            <p class="stat-title">A liga átlag életkora:</p>
+            <p id="avgAge"></p>
+        </div>
+    </div>
+
+    <div id="valuePlayers">
+        <div>
+            <p class="stat-title">A legértékesebb játékos a ligában:</p>
+            <p id="mostExpensive"></p>
+        </div>
+
+        <div>
+            <p class="stat-title">Akinek még van hova teperni:</p>
+            <p id="cheapest"></p>
+        </div>
+    </div>
+
+    <h2 id="rookie">Rookie vs Veterán</h2>
+
+    <div id="youngAndOld-flex">
+        <div>
+            <button onclick="mutasdAzIdoset()">Ki a legidősebb a ligában?</button>
+            <p id="legidosebbKor"></p>
+            <ol id="legidosebb"></ol>
+            <button onclick="mutasdAFiatalt()">Ki a legfiatalabb a ligában?</button>
+            <p id="legfiatalabbKor"></p>
+            <ol id="legfiatalabb"></ol>
+        </div>
+
+        <div>
+            <img src="/images/foci_1.jpg"
+                 alt="Kié lesz a jövő?">
+        </div>
+    </div>
+
+
+
+    <h2>A csapatok játékosai</h2>
+    <div id="teammates">
+        <div>
+            <img src="/images/foci_2.jpg"
+                 alt="Csapattagok">
+        </div>
+        <div>
+            <p id="csapattagok">Melyik csapat tagjait szeretnéd látni?</p>
+            <select name="playersOfClubs"
+                    id="playersOfClubs"
+                    onchange="tellTheClubValue()">
+                <option value="noValue">Válassz csapatot</option>
+                <option value="Vasas FC">Vasas FC</option>
+                <option value="Ferencvárosi TC">Ferencvárosi TC</option>
+                <option value="Balmazújváros FC">Balmazújvárosi FC</option>
+                <option value="Újpest FC">Újpest FC</option>
+                <option value="Diósgyőri VTK">Diósgyőri VTK</option>
+                <option value="Puskás Akadémia FC">Puskás Akadémia FC</option>
+                <option value="Paksi FC">Paksi FC</option>
+                <option value="Szombathelyi Haladás">Szombathelyi Haladás</option>
+                <option value="Budapest Honvéd FC">Budapest Honvéd FC</option>
+                <option value="Mezőkövesd Zsóry FC">Mezőkövesd Zsóry FC</option>
+                <option value="Videoton FC">Videoton FC</option>
+                <option value="Debreceni VSC">Debreceni VSC</option>
+            </select>
+            <ul id="playersList"></ul>
+        </div>
+    </div>
+
+
+    <h2>Top játékosok</h2>
+
+    <div id="playersValue">
+        <label for="topAnyPlayer">Top hány játékosra vagy kíváncsi?</label>
+        <input type="number"
+               id="topAnyPlayer">
+        <button onclick="drawTopPlayers()">Mutasd őket!</button>
+        <ol id="topPlayers"></ol>
+    </div>
+
+    <h2>Posztonkénti szűrés</h2>
+
+    <div id="positionsList">
+        <p id="positionsOfPlayers">Válaszd ki, hogy mely poszton játszó játékoskra vagy kíváncsi!</p>
+        <select name="positions"
+                id="positions"
+                onchange="listaPosztonkent()">
+        </select>
+        <ul id="valami"></ul>
+    </div>
+
+    <script src="/scripts/nb1.js"></script>
+    <script src="/scripts/queries.js"></script>
+</body>
+
+</html>
